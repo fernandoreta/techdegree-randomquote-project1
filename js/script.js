@@ -8,7 +8,7 @@ var quotes = [
   {
     "quote": "There's no place like home.",
     "source": "internet page",
-    "citation": "",
+    "citation": "Fernando",
     "year": 1990,
   },
   {
@@ -112,10 +112,14 @@ function printQuote() {
         html += "<span class='citation'> " + currentQuote.citation + "</span>";
     }
 
-    if ("date" in currentQuote) {
-        html += "<span class='year'> " + currentQuote.date + "</span>";
+    if ("year" in currentQuote) {
+        html += "<span class='year'> " + currentQuote.year + "</span>";
     }
-    html += "<span class='category'> " + currentQuote.category + "</span>";
+    if ("category" in currentQuote) {
+        html += "<span class='category'> " + currentQuote.category;
+    }
+
+    html += "</span>";
 
     document.getElementById("quote-box").innerHTML = html;
     document.body.style.background = currentColor.background;
